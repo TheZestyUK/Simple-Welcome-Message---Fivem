@@ -20,3 +20,5 @@ AddEventHandler('playerConnecting', function(playerName, setKickReason, deferral
     -- Finally, allow the player to fully join
     deferrals.done('Welcome to the server! Have fun!')
 end)
+
+--Feel free to share, use as you wish. - ZestyUK
