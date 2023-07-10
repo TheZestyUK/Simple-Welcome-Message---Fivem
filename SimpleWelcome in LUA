@@ -1,0 +1,22 @@
+-- This is a simple script that prints a welcome message when a player joins the server
+
+-- Event handler for player joining
+AddEventHandler('playerConnecting', function(playerName, setKickReason, deferrals)
+    -- Print welcome message
+    print('Player ' .. playerName .. ' is connecting')
+
+    -- Display a welcome message to the player
+    deferrals.defer()
+
+    -- Simulate some checks or data retrieval before allowing the player to join
+    Citizen.Wait(2000) -- Wait for 2 seconds (you can replace this with your own checks)
+
+    -- Allow the player to join
+    deferrals.update('Welcome to the server!')
+
+    -- Perform additional checks or data retrieval if needed
+    Citizen.Wait(1000) -- Wait for 1 second (replace this with your own checks)
+
+    -- Finally, allow the player to fully join
+    deferrals.done('Welcome to the server! Have fun!')
+end)
